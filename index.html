@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="img/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/modal.css" />
+    <title>PRO Уход</title>
+</head>
+<body>
+<div class="modals">
+    <div id="login" class="default">
+        <form action="" class="login__form">
+            <p class="sub--title">Войти</p>
+            <div class="login__form-item">
+                <p class="login__form-name">Email</p>
+                <input type="email" class="login__form-input" required>
+            </div>
+            <div class="login__form-item">
+                <p class="login__form-name">Пароль</p>
+                <input type="password" class="login__form-input" required>
+            </div>
+            <button type="button" class="login__form-forgot">Забыли пароль?</button>
+            <button type="submit" class="button login__form-submit button--light">Войти</button>
+            <p class="login__form-reg">Нет аккаунта? <span class="login__form-reg--go reg">Зарегистрироваться</span></p>
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+    <div id="reset" class="default">
+        <form action="" class="login__form reset__form">
+            <p class="sub--title">Восстановить пароль</p>
+            <div class="login__form-item">
+                <p class="login__form-name">Email</p>
+                <input type="email" class="login__form-input" required>
+            </div>
+            <div class="login__form-buttons">
+                <button type="button" class="button login__form-cancel button--red">Отмена</button>
+                <button type="submit" class="button login__form-link button--light">Отправить ссылку</button>
+            </div>
+
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+    <div id="success" class="default">
+        <form action="" class="login__form reset__form">
+            <div class="login__form-text">
+                <p class="login__form-text--title">Код отправлен</p>
+                <p class="login__form-text--desc">Мы отправили код на вашу почту. Если не нашли сообщение, проверьте папку спам.</p>
+                <p class="login__form-text--desc">Не пришло письмо? <span class="login__form-text--again">Отправить еще раз</span></p>
+            </div>
+
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+    <div id="reg" class="default">
+        <form action="" class="login__form">
+            <p class="sub--title">Регистрация</p>
+            <div class="login__flex">
+                <div class="login__form-item">
+                    <p class="login__form-name">Имя</p>
+                    <input type="text" class="login__form-input" required>
+                </div>
+                <div class="login--flex">
+                    <div class="login__form-item">
+                        <p class="login__form-name">Телефон</p>
+                        <input type="tel" class="login__form-input" required>
+                    </div>
+                    <div class="login__form-item">
+                        <p class="login__form-name">Email</p>
+                        <input type="email" class="login__form-input" required>
+                    </div>
+                </div>
+            </div>
+            <div class="login__switch">
+                <button type="button" class="login__switch-button active button--outline">Физическое лицо</button>
+                <button type="button" class="login__switch-button button--outline">Юридическое лицо</button>
+            </div>
+            <div class="login__hidden">
+                <div class="login__form-item">
+                    <p class="login__form-name">Наименование</p>
+                    <input type="text" class="login__form-input yur" required readonly>
+                </div>
+                <div class="login--flex">
+                    <div class="login__form-item">
+                        <p class="login__form-name">ИНН</p>
+                        <input type="text" class="login__form-input yur" required readonly>
+                    </div>
+                    <div class="login__form-item">
+                        <p class="login__form-name">КПП</p>
+                        <input type="text" class="login__form-input yur" required readonly>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="button login__form-submit button--light">Зарегистрироваться</button>
+            <p class="login__form-reg">Уже есть аккаунт? <span class="login__form-reg--go entry">Вход</span></p>
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+</div>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <a href="" class="logo">
+                <img src="img/logo.svg" alt="" class="logo__image">
+            </a>
+            <div class="search">
+                <button class="button button--light search__catalog">Каталог</button>
+                <div class="container">
+                    <input type="text" class="search__input" placeholder="Я ищу">
+                </div>
+                <div class="sub">
+                    <div class="sub__item">
+                        <a href="" class="sub__item-link">Акции скидки</a>
+                    </div>
+                    <div class="sub__item">
+                        <button class="sub__item-link">
+                            Для лица
+                            <svg>
+                                <use xlink:href="sprite.svg#chevron"></use>
+                            </svg>
+                        </button>
+                        <div class="sub__item-hidden">
+                            <a href="" class="sub__item-hidden--item">Очищение</a>
+                            <a href="" class="sub__item-hidden--item">Кремы</a>
+                            <a href="" class="sub__item-hidden--item">Уход</a>
+                            <a href="" class="sub__item-hidden--item">Увлажнение</a>
+                        </div>
+                    </div>
+                    <div class="sub__item">
+                        <a href="" class="sub__item-link">Для тела</a>
+                    </div>
+                    <div class="sub__item">
+                        <a href="" class="sub__item-link">Волосы</a>
+                    </div>
+                    <div class="sub__item">
+                        <button class="sub__item-link">
+                            Тест
+                            <svg>
+                                <use xlink:href="sprite.svg#chevron"></use>
+                            </svg>
+                        </button>
+                        <div class="sub__item-hidden">
+                            <a href="" class="sub__item-hidden--item">Очищение</a>
+                            <a href="" class="sub__item-hidden--item">Кремы</a>
+                            <a href="" class="sub__item-hidden--item">Уход</a>
+                            <a href="" class="sub__item-hidden--item">Увлажнение</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="soc">
+                <a href="tel: +7 980 465 125 78" class="soc__item phone">
+                    <svg class="soc__item-icon">
+                        <use xlink:href="sprite.svg#phone"></use>
+                    </svg>
+                </a>
+                <div class="container">
+                    <a href="" class="soc__item compare">
+                        <svg class="soc__item-icon">
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="soc__item cart">
+                        <svg class="soc__item-icon">
+                            <use xlink:href="sprite.svg#cart"></use>
+                        </svg>
+                        <p class="cart__value">0</p>
+                    </a>
+                    <a class="soc__item user">
+                        <svg class="soc__item-icon">
+                            <use xlink:href="sprite.svg#user"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="header__nav">
+        <div class="container">
+            <a href="" class="header__nav-item">Бренды</a>
+            <a href="" class="header__nav-item">Сухая кожа</a>
+            <a href="" class="header__nav-item">Жирная кожа</a>
+            <a href="" class="header__nav-item">Проблемная кожа</a>
+            <a href="" class="header__nav-item">Нормальная кожа</a>
+            <a href="" class="header__nav-item">Отбеливающий крем</a>
+            <a href="" class="header__nav-item">Anti-age</a>
+            <a href="" class="header__nav-item">Для тела</a>
+        </div>
+    </nav>
+</header>
+<main class="wrapper">
+    <section class="notice swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="notice__item">
+                    <p class="notice__item-title">Новое поступление помад для губ!</p>
+                    <p class="notice__item-description">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                    <button class="button button--big notice__item-button">Смотреть каталог</button>
+                    <img src="img/sl.png" alt="" class="notice__item-image">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="notice__item">
+                    <p class="notice__item-title">Новое поступление помад для губ!</p>
+                    <p class="notice__item-description">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                    <button class="button button--big notice__item-button">Смотреть каталог</button>
+                    <img src="img/sl.png" alt="" class="notice__item-image">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="notice__item">
+                    <p class="notice__item-title">Новое поступление помад для губ!</p>
+                    <p class="notice__item-description">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                    <button class="button button--big notice__item-button">Смотреть каталог</button>
+                    <img src="img/sl.png" alt="" class="notice__item-image">
+                </div>
+            </div>
+        </div>
+        <button class="notice__nav prev">
+            <svg>
+                <use xlink:href="sprite.svg#chevron"></use>
+            </svg>
+        </button>
+        <button class="notice__nav next">
+            <svg>
+                <use xlink:href="sprite.svg#chevron"></use>
+            </svg>
+        </button>
+        <div class="notice__pagination"></div>
+    </section>
+    <section class="preview">
+        <div class="container">
+            <h1>Для лица и тела с доставкой</h1>
+            <div class="preview__field">
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr1.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr2.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr3.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr4.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr1.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr2.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr3.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr4.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr1.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr2.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr3.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr4.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr2.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr3.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product">
+                    <a href="" class="product__link" title="Подробнее о *Название товара*">
+                        <img src="img/pr4.png" alt="" class="product__link-image">
+                        <p class="product__link-title">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
+                        <p class="product__discount">-25%</p>
+                        <div class="product__notes">
+                            <p class="product__notes-item pop">Хит</p>
+                            <p class="product__notes-item new">Новинка</p>
+                        </div>
+                    </a>
+                    <div class="product__price">
+                        <p class="product__price-new">3 500 ₽</p>
+                        <p class="product__price-old">7 500 ₽</p>
+                    </div>
+                    <button class="button button--light product__button">В корзину</button>
+                    <div class="product__col hidden">
+                        <button class="product__col-button minus">
+                            <svg>
+                                <use xlink:href="sprite.svg#minus"></use>
+                            </svg>
+                        </button>
+                        <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                        <button class="product__col-button plus">
+                            <svg>
+                                <use xlink:href="sprite.svg#plus"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="product__compare">
+                        <svg>
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="brands">
+        <h2>Бренды</h2>
+        <div class="brands__field swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br1.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br2.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br1.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br1.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br3.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br3.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br4.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br5.png" alt="" class="brand__image">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="brand">
+                        <img src="img/br6.png" alt="" class="brand__image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="brands__nav prev">
+            <svg>
+                <use xlink:href="sprite.svg#chevron"></use>
+            </svg>
+        </button>
+        <button class="brands__nav next">
+            <svg>
+                <use xlink:href="sprite.svg#chevron"></use>
+            </svg>
+        </button>
+    </section>
+    <section class="about">
+        <div class="about__item">
+            <img src="img/ab1.jpg" alt="" class="about__item-image">
+            <div class="about__item-text">
+                <p class="about__item-text--title">Не просто магазин косметики</p>
+                <p class="about__item-text--desc">Это только самые эффективные средства подобранные именно для вас профессиональным косметологом.</p>
+                <p class="about__item-text--desc">Вот уже более двадцати лет я делаю девушек счастливее!</p>
+                <p class="about__item-text--desc">
+                    Я убеждена, что качественный сон, полезная еда, умеренные нагрузки, правильное мышление и регулярный уход за лицом творят чудеса с внешностью!
+                    Еще я уверена, что чем уже ниша, тем лучше ты в ней разбираешься.
+                </p>
+                <p class="about__item-text--fat">Так возникла идея магазина  PRO уход</p>
+            </div>
+        </div>
+        <div class="about__item">
+            <div class="about__item-text">
+                <p class="about__item-text--desc">В магазине есть как зарубежные, так и отечественные бренды</p>
+                <p class="about__item-text--fat">Каждый бренд подобран и проверен лично мной</p>
+                <p class="about__item-text--desc">Преимущества профессиональной косметики: эффективные формулы, инновационные составы и видимый результат.</p>
+                <p class="about__item-text--desc">Я, как косметолог, приобретаю продукцию только у официальных представителей, поэтому вы можете быть уверены в качестве и подлинности  товара.</p>
+                <ul class="about__item-text--list">
+                    <li>Заказать косметику можно из любого города РФ</li>
+                    <li>По Воронежу так же есть доставка.</li>
+                </ul>
+            </div>
+            <img src="img/ab2.jpg" alt="" class="about__item-image">
+        </div>
+    </section>
+    <section class="pluses">
+        <div class="container">
+            <div class="pluses__item">
+                <img src="img/pl1.png" class="pluses__item-image">
+                <p class="pluses__item-text">Профессионально консультируем</p>
+            </div>
+            <div class="pluses__item">
+                <img src="img/pl2.png" class="pluses__item-image">
+                <p class="pluses__item-text">Гарантия качества</p>
+            </div>
+            <div class="pluses__item">
+                <img src="img/pl3.png" class="pluses__item-image">
+                <p class="pluses__item-text">Бесплатная доставка от 5000₽</p>
+            </div>
+            <div class="pluses__item">
+                <img src="img/pl4.png" class="pluses__item-image">
+                <p class="pluses__item-text">Только официальные представители</p>
+            </div>
+            <div class="pluses__item">
+                <img src="img/pl5.png" class="pluses__item-image">
+                <p class="pluses__item-text">Подбор ухода косметологом</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Sections -->
+
+    <div id="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A804226f720dfae803741f80fbf441bb03ea11dc65b9559c65af02e401a903aad&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        <a href="" rel="modal:close" class="login__form-close close--modal">
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+
+    <!----------------------->
+</main>
+<footer class="footer index">
+    <div class="container">
+        <p class="footer__copyright">Copyright PRO Уход 2022</p>
+        <div class="footer__menu">
+            <a href="" class="footer__menu-item">Доставка и оплата</a>
+            <a href="" class="footer__menu-item">Контакты</a>
+            <a href="" class="footer__menu-item">О нас</a>
+        </div>
+        <div class="footer__contacts">
+            <a href="tel: +7 980 465 125 78" class="footer__contacts-item">
+                <svg>
+                    <use xlink:href="sprite.svg#phone"></use>
+                </svg>
+                +7 980 465 125 78
+            </a>
+            <a class="footer__contacts-item">
+                <svg>
+                    <use xlink:href="sprite.svg#location"></use>
+                </svg>
+                Воронеж, Плехановская 9
+            </a>
+        </div>
+        <div class="footer__socials">
+            <a href="" class="footer__socials-item">
+                <svg>
+                    <use xlink:href="sprite.svg#telegram"></use>
+                </svg>
+            </a>
+            <a href="" class="footer__socials-item">
+                <svg>
+                    <use xlink:href="sprite.svg#whatsapp"></use>
+                </svg>
+            </a>
+            <a href="" class="footer__socials-item">
+                <svg>
+                    <use xlink:href="sprite.svg#vk"></use>
+                </svg>
+            </a>
+        </div>
+        <a target="_blank" href="https://intrid.ru/" class="footer__intrid">
+            <div class="footer__intrid-circle">
+                <span class="footer__intrid-circle--in"></span>
+            </div>
+            made in <span class="footer__intrid-fat">INTRID</span>
+        </a>
+    </div>
+</footer>
+<script
+        src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+        crossorigin="anonymous"
+>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script src="js/header.js"></script>
+<script src="js/sliders.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/cartAddListener.js"></script>
+</body>
+</html>
