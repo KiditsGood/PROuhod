@@ -1,3 +1,9 @@
+$('.menu__item:nth-child(3)').click(() => {
+    $('#login').modal({
+        fadeDuration: 200
+    })
+})
+
 $('.soc__item.user').click(() => {
     $('#login').modal({
         fadeDuration: 200

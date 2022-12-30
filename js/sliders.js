@@ -15,6 +15,21 @@ const brandsSlider = new Swiper('.brands__field', {
     autoplay: true,
     loop: true,
     breakpoints: {
+        0: {
+          slidesPerView: 4
+        },
+        500: {
+            slidesPerView: 5
+        },
+        700: {
+            slidesPerView: 6
+        },
+        800: {
+            slidesPerView: 7
+        },
+        850: {
+          slidesPerView: 8
+        },
         1000: {
             slidesPerView: 6
         },

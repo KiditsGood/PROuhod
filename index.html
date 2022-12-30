@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="img/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
@@ -145,20 +146,6 @@
                     <div class="sub__item">
                         <a href="" class="sub__item-link">Волосы</a>
                     </div>
-                    <div class="sub__item">
-                        <button class="sub__item-link">
-                            Тест
-                            <svg>
-                                <use xlink:href="sprite.svg#chevron"></use>
-                            </svg>
-                        </button>
-                        <div class="sub__item-hidden">
-                            <a href="" class="sub__item-hidden--item">Очищение</a>
-                            <a href="" class="sub__item-hidden--item">Кремы</a>
-                            <a href="" class="sub__item-hidden--item">Уход</a>
-                            <a href="" class="sub__item-hidden--item">Увлажнение</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="soc">
@@ -186,6 +173,9 @@
                     </a>
                 </div>
             </div>
+            <div id="burger">
+                <span></span>
+            </div>
         </div>
     </div>
     <nav class="header__nav">
@@ -209,7 +199,10 @@
                     <p class="notice__item-title">Новое поступление помад для губ!</p>
                     <p class="notice__item-description">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
                     <button class="button button--big notice__item-button">Смотреть каталог</button>
-                    <img src="img/sl.png" alt="" class="notice__item-image">
+                    <picture>
+                        <source srcset="img/mobile_sl.png" media="(max-width: 999px)">
+                        <img src="img/sl.png" alt="" class="notice__item-image">
+                    </picture>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -217,7 +210,10 @@
                     <p class="notice__item-title">Новое поступление помад для губ!</p>
                     <p class="notice__item-description">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
                     <button class="button button--big notice__item-button">Смотреть каталог</button>
-                    <img src="img/sl.png" alt="" class="notice__item-image">
+                    <picture>
+                        <source srcset="img/mobile_sl.png" media="(max-width: 999px)">
+                        <img src="img/sl.png" alt="" class="notice__item-image">
+                    </picture>
                 </div>
             </div>
             <div class="swiper-slide">
@@ -225,7 +221,10 @@
                     <p class="notice__item-title">Новое поступление помад для губ!</p>
                     <p class="notice__item-description">Нежный легкий крем для рук и тела с фруктовыми экстрактами.</p>
                     <button class="button button--big notice__item-button">Смотреть каталог</button>
-                    <img src="img/sl.png" alt="" class="notice__item-image">
+                    <picture>
+                        <source srcset="img/mobile_sl.png" media="(max-width: 999px)">
+                        <img src="img/sl.png" alt="" class="notice__item-image">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -882,6 +881,39 @@
             <span></span>
         </a>
     </div>
+    <div class="menu">
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#catalog"></use>
+            </svg>
+            Каталог
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#actions"></use>
+            </svg>
+            Акции
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#user"></use>
+            </svg>
+            Профиль
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#compare"></use>
+            </svg>
+            Сравнение
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#cart"></use>
+            </svg>
+            Корзина
+        </a>
+    </div>
+    <div class="up"></div>
 
     <!----------------------->
 </main>
@@ -945,5 +977,7 @@
 <script src="js/sliders.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/cartAddListener.js"></script>
+<script src="js/burger.js"></script>
+<script src="js/upArrow.js"></script>
 </body>
 </html>
