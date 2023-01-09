@@ -16,11 +16,12 @@ $(function() {
         if (subMenu.hasClass('active')) {
             subMenu.removeClass('active')
             bodySelector.removeClass('hidden')
-            $('#overlay').remove()
+            $('#overlay').removeClass('active')
         }
         else {
             subMenu.addClass('active')
-            bodySelector.addClass('hidden').append('<div id="overlay"></div>')
+            bodySelector.addClass('hidden')
+            $('#overlay').addClass('active')
         }
     })
 
@@ -31,7 +32,7 @@ $(function() {
             }
             else {
                 subMenu.removeClass('active')
-                $('#overlay').remove()
+                $('#overlay').removeClass('active')
                 bodySelector.removeClass('hidden')
             }
         }
