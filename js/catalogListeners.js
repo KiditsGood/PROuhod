@@ -26,3 +26,13 @@ $(document).click(function (e) {
         }
     }
 })
+
+$('.sort__params-mobile').click(() => {
+    $('.catalog__field-filter').addClass('active')
+    $('body').addClass('hidden')
+})
+
+$('.filter__back-button').click(() => {
+    $('.catalog__field-filter').removeClass('active')
+    $('body').removeClass('hidden')
+})
