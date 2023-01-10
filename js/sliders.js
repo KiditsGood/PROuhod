@@ -48,3 +48,55 @@ const brandsSlider = new Swiper('.brands__field', {
         nextEl: '.brands__nav.next'
     }
 })
+
+const pictureSlider = new Swiper('.picture__slider .swiper', {
+    spaceBetween: 8,
+    loop: true,
+    navigation: {
+        prevEl: '.picture__slider-nav.prev',
+        nextEl: '.picture__slider-nav.next'
+    },
+    breakpoints: {
+        360: {
+            slidesPerView: 3
+        },
+        530: {
+            slidesPerView: 4
+        },
+        700: {
+            slidesPerView: 5
+        }
+    }
+})
+
+const withSlider = new Swiper('.with .swiper', {
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+        prevEl: '.with__buttons-nav.prev',
+        nextEl: '.with__buttons-nav.next'
+    },
+    breakpoints: {
+        360: {
+            slidesPerView: 1,
+        },
+        410: {
+            slidesPerView: 2
+        },
+        585: {
+            slidesPerView: 3
+        },
+        800: {
+            slidesPerView: 4
+        },
+        1000: {
+            slidesPerView: 3
+        },
+        1200: {
+            slidesPerView: 4
+        },
+        1480: {
+            slidesPerView: 5
+        }
+    }
+})
