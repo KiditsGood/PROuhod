@@ -74,3 +74,9 @@ $('.footer__contacts-item:last-child').click(() => {
         fadeDuration: 200
     })
 })
+
+$('.part__click').click(() => {
+    $('#click').modal({
+        fadeDuration: 200
+    })
+})

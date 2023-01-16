@@ -1948,6 +1948,69 @@ a.crumbs__item:after{
     transition: 0.2s;
 }
 
+/* Click Modal */
+
+#click{
+    display: none;
+}
+.click{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 720px;
+    position: relative;
+}
+.click .login__form-close{
+    top: -30px;
+    right: -45px;
+}
+.click .sub--title{
+    text-align: center;
+}
+.click__product{
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+.click__product-image{
+    width: 192px;
+    height: 170px;
+    object-fit: contain;
+    border: 1px solid var(--neutral5);
+    border-radius: 16px;
+}
+.click__product-info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.click__product-info--price{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.click__form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.click__form-top{
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+}
+.click__form-input{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--neutral100);
+    background: var(--neutral5);
+    border-radius: 16px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+}
+
 /* Media Queries */
 
 @media (min-width: 1000px) and (max-width: 1480px){

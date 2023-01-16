@@ -11,13 +11,25 @@ minusButton.click(function minusHandler () {
     let colInput = $(this).next()
     let colBlock = $(this).parent()
 
-    if (colInput.val() <= 1) {
-        colBlock.addClass('hidden')
-        colBlock.prev().removeClass('hidden')
+    if ($(this).hasClass('cols')){
+        if (colInput.val() <= 1) {
+            colInput.val(1)
+        }
+        else {
+            colInput.val(Number(colInput.val()) - 1)
+        }
     }
     else {
-        colInput.val(Number(colInput.val()) - 1)
+        if (colInput.val() <= 1) {
+            colBlock.addClass('hidden')
+            colBlock.prev().removeClass('hidden')
+        }
+        else {
+            colInput.val(Number(colInput.val()) - 1)
+        }
     }
+
+
 })
 
 plusButton.click(function () {
