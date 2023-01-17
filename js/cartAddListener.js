@@ -37,3 +37,9 @@ plusButton.click(function () {
 
     colInput.val(Number(colInput.val()) + 1)
 })
+
+$(window).on('load', function () {
+    if ($(window).width() < 1000) {
+        $('.cart__button').text('Оформить')
+    }
+})
