@@ -1056,8 +1056,8 @@ h2, .sub--title{
 }
 .login__form-close{
     position: absolute;
-    top: 32px;
-    right: 32px;
+    top: 16px;
+    right: 16px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -1088,6 +1088,7 @@ h2, .sub--title{
     gap: 10px;
     width: 100%;
     margin-top: 24px;
+    flex-wrap: wrap;
 }
 .login__form-success{
     width: 91px;
@@ -1896,6 +1897,54 @@ a.crumbs__item:after{
 .description__item span{
     font-weight: 600;
 }
+.contain{
+    background: #F6F6F9;
+    border-radius: 40px;
+    box-sizing: border-box;
+    padding: 44px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.contain__text{
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--neutral100);
+}
+.video{
+    background: #F6F6F9;
+    border-radius: 40px;
+    box-sizing: border-box;
+    padding: 44px 40px;
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+}
+.video__item{
+    position: relative;
+}
+.video__item-play{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    z-index: 1;
+}
+.video__item-preview{
+    width: 261px;
+    height: 174px;
+    opacity: 0.9;
+    border-radius: 12px;
+}
 
 /* With Slider */
 
@@ -2173,6 +2222,10 @@ a.crumbs__item:after{
 .cart__policy a{
     color: var(--primary100);
 }
+.cart .part__price-new{
+    text-align: center;
+}
+
 
 /* Media Queries */
 
@@ -2411,8 +2464,8 @@ a.crumbs__item:after{
         gap: 6px;
     }
     .product__price-new{
-        font-size: 20px;
-        line-height: 21px;
+        font-size: 18px;
+        line-height: 20px;
     }
     .product__price-old{
         font-size: 13px;
@@ -2947,5 +3000,33 @@ a.crumbs__item:after{
     }
     .up__cart{
         bottom: 175px;
+    }
+    .video{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .click__product{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .click__form-top{
+        flex-direction: column;
+    }
+    #click.modal{
+        padding: 34px 50px;
+    }
+    .click__product-info--price{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .click__product{
+        gap: 10px;
+    }
+    #click .chars__desc{
+        display: none;
+    }
+    .login__form-cancel, .login__form-link{
+        width: 100%;
     }
 }
