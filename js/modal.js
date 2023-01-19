@@ -45,7 +45,7 @@ $('.reg').click(() => {
     })
 })
 
-$('.entry').click(() => {
+$('.order__item-top_regex.for--log, .entry').click(() => {
     $('#login').modal({
         fadeDuration: 200
     })

@@ -1,10 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/noUiSlider.css">
+    <title>PRO Уход</title>
 </head>
 <body>
+<div class="modals">
+    <div id="login" class="default">
+        <form action="" class="login__form">
+            <p class="sub--title">Войти</p>
+            <div class="login__form-item">
+                <p class="login__form-name">Email</p>
+                <input type="email" class="login__form-input" required>
+            </div>
+            <div class="login__form-item">
+                <p class="login__form-name">Пароль</p>
+                <input type="password" class="login__form-input" required>
+            </div>
+            <button type="button" class="login__form-forgot">Забыли пароль?</button>
+            <button type="submit" class="button login__form-submit button--light">Войти</button>
+            <p class="login__form-reg">Нет аккаунта? <span class="login__form-reg--go reg">Зарегистрироваться</span></p>
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+    <div id="reset" class="default">
+        <form action="" class="login__form reset__form">
+            <p class="sub--title">Восстановить пароль</p>
+            <div class="login__form-item">
+                <p class="login__form-name">Email</p>
+                <input type="email" class="login__form-input" required>
+            </div>
+            <div class="login__form-buttons">
+                <button type="button" class="button login__form-cancel button--red">Отмена</button>
+                <button type="submit" class="button login__form-link button--light">Отправить ссылку</button>
+            </div>
 
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+    <div id="success" class="default">
+        <form action="" class="login__form reset__form">
+            <div class="login__form-text">
+                <p class="login__form-text--title">Код отправлен</p>
+                <p class="login__form-text--desc">Мы отправили код на вашу почту. Если не нашли сообщение, проверьте папку спам.</p>
+                <p class="login__form-text--desc">Не пришло письмо? <span class="login__form-text--again">Отправить еще раз</span></p>
+            </div>
+
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+    <div id="reg" class="default">
+        <form action="" class="login__form">
+            <p class="sub--title">Регистрация</p>
+            <div class="login__flex">
+                <div class="login__form-item">
+                    <p class="login__form-name">Имя</p>
+                    <input type="text" class="login__form-input" required>
+                </div>
+                <div class="login--flex">
+                    <div class="login__form-item">
+                        <p class="login__form-name">Телефон</p>
+                        <input type="tel" class="login__form-input" required>
+                    </div>
+                    <div class="login__form-item">
+                        <p class="login__form-name">Email</p>
+                        <input type="email" class="login__form-input" required>
+                    </div>
+                </div>
+            </div>
+            <div class="login__switch">
+                <button type="button" class="login__switch-button active button--outline">Физическое лицо</button>
+                <button type="button" class="login__switch-button button--outline">Юридическое лицо</button>
+            </div>
+            <div class="login__hidden">
+                <div class="login__form-item">
+                    <p class="login__form-name">Наименование</p>
+                    <input type="text" class="login__form-input yur" required readonly>
+                </div>
+                <div class="login--flex">
+                    <div class="login__form-item">
+                        <p class="login__form-name">ИНН</p>
+                        <input type="text" class="login__form-input yur" required readonly>
+                    </div>
+                    <div class="login__form-item">
+                        <p class="login__form-name">КПП</p>
+                        <input type="text" class="login__form-input yur" required readonly>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="button login__form-submit button--light">Зарегистрироваться</button>
+            <p class="login__form-reg">Уже есть аккаунт? <span class="login__form-reg--go entry">Вход</span></p>
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+</div>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="img/logo.svg" alt="" class="logo__image">
+            </a>
+            <div class="search">
+                <button class="button button--light search__catalog">Каталог</button>
+                <div class="container">
+                    <input type="text" class="search__input" placeholder="Я ищу">
+                </div>
+                <div class="sub">
+                    <div class="sub__item">
+                        <a href="" class="sub__item-link">Акции скидки</a>
+                    </div>
+                    <div class="sub__item">
+                        <button class="sub__item-link">
+                            Для лица
+                            <svg>
+                                <use xlink:href="sprite.svg#chevron"></use>
+                            </svg>
+                        </button>
+                        <div class="sub__item-hidden">
+                            <a href="" class="sub__item-hidden--item">Очищение</a>
+                            <a href="" class="sub__item-hidden--item">Кремы</a>
+                            <a href="" class="sub__item-hidden--item">Уход</a>
+                            <a href="" class="sub__item-hidden--item">Увлажнение</a>
+                        </div>
+                    </div>
+                    <div class="sub__item">
+                        <a href="" class="sub__item-link">Для тела</a>
+                    </div>
+                    <div class="sub__item">
+                        <a href="" class="sub__item-link">Волосы</a>
+                    </div>
+                </div>
+            </div>
+            <div class="soc">
+                <a href="tel: +7 980 465 125 78" class="soc__item phone">
+                    <svg class="soc__item-icon">
+                        <use xlink:href="sprite.svg#phone"></use>
+                    </svg>
+                </a>
+                <div class="container">
+                    <a href="" class="soc__item compare">
+                        <svg class="soc__item-icon">
+                            <use xlink:href="sprite.svg#compare"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="soc__item">
+                        <svg class="soc__item-icon">
+                            <use xlink:href="sprite.svg#cart"></use>
+                        </svg>
+                        <p class="cart__value">0</p>
+                    </a>
+                    <a class="soc__item user">
+                        <svg class="soc__item-icon">
+                            <use xlink:href="sprite.svg#user"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div id="burger">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <nav class="header__nav">
+        <div class="container">
+            <a href="" class="header__nav-item">Бренды</a>
+            <a href="" class="header__nav-item">Сухая кожа</a>
+            <a href="" class="header__nav-item">Жирная кожа</a>
+            <a href="" class="header__nav-item">Проблемная кожа</a>
+            <a href="" class="header__nav-item">Нормальная кожа</a>
+            <a href="" class="header__nav-item">Отбеливающий крем</a>
+            <a href="" class="header__nav-item">Anti-age</a>
+            <a href="" class="header__nav-item">Для тела</a>
+        </div>
+    </nav>
+</header>
+<main class="wrapper">
+    <section class="order">
+        <div class="order--left">
+            <div class="order__item">
+                <div class="order__item-top">
+                    <h1 class="order__item-top_title">1. Ваши данные</h1>
+                    <button class="order__item-top_regex for--log">Я зарегистрирован</button>
+                </div>
+                <div class="order__item-inputs">
+                    <div class="order__input">
+                        <input type="text" class="order__input-field" required pattern="\S+">
+                        <label class="order__input-label">Имя</label>
+                    </div>
+                    <div class="order__input">
+                        <input type="tel" class="order__input-field" required pattern="\S+">
+                        <label class="order__input-label">Телефон</label>
+                    </div>
+                    <div class="order__input">
+                        <input type="text" class="order__input-field" required pattern="\S+">
+                        <label class="order__input-label">helen@gmail.com</label>
+                    </div>
+                </div>
+            </div>
+            <div class="order__item">
+                <div class="order__item-top">
+                    <h1 class="order__item-top_title">2. Способ получения</h1>
+                </div>
+                <div class="order__item-bottom">
+                    <div class="tabs">
+                        <div class="tabs__buttons">
+                            <button class="tabs__buttons-item active">Самовывоз</button>
+                            <button class="tabs__buttons-item">Доставка по Воронежу</button>
+                            <button class="tabs__buttons-item">Доставка по России</button>
+                        </div>
+                        <div class="tabs__field">
+                            <div class="tabs__field-item active">
+                                <div class="self">
+                                    <p class="self__text">Адрес: Воронеж, ул Свободы 5</p>
+                                    <div class="comment">
+                                        <textarea class="comment__area" placeholder="Комментарий к заказу"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs__field-item">
+                                <div class="delivery">
+                                    <div class="order__input">
+                                        <input type="text" class="order__input-field" required pattern="\S+">
+                                        <label class="order__input-label">Введите адрес</label>
+                                    </div>
+                                    <div class="comment">
+                                        <textarea class="comment__area" placeholder="Комментарий к заказу"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs__field-item">
+                                <div class="delivery">
+                                    <div class="order__input">
+                                        <input type="text" class="order__input-field" required pattern="\S+">
+                                        <label class="order__input-label">Введите адрес</label>
+                                    </div>
+                                    <div class="comment">
+                                        <textarea class="comment__area" placeholder="Комментарий к заказу"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="order__item-top_regex">Условия доставки</button>
+                </div>
+
+            </div>
+            <div class="order__item">
+                <div class="order__item-top point">
+                    <h1 class="order__item-top_title">3. Способ оплаты</h1>
+                    <div class="points">
+                        <p class="points__name">Доступно</p>
+                        <p class="points__value">400 баллов</p>
+                    </div>
+                </div>
+                <div class="pay">
+                    <div class="pay__methods">
+                        <button class="pay__methods-item active">
+                            <svg>
+                                <use xlink:href="sprite.svg#dollar"></use>
+                            </svg>
+                            Наличными
+                        </button>
+                        <button class="pay__methods-item">
+                            <svg>
+                                <use xlink:href="sprite.svg#online"></use>
+                            </svg>
+                            Онлайн
+                        </button>
+                    </div>
+                    <div class="pay__point">
+                        <input class="filter__check-box--check" type="checkbox" id="point" name="point">
+                        <label for="point" class="filter__check-box--label point--label">
+                            Оплатить часть баллами
+                        </label>
+                        <div class="order__input point--input">
+                            <input type="text" class="order__input-field" required pattern="\S+" disabled>
+                            <label class="order__input-label">Количество баллов</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart__right">
+            <div class="part">
+                <p class="part__title">Сумма заказа</p>
+                <div class="part__mobile">
+                    <p class="part__price-new">3 500 ₽</p>
+                    <div class="part__cashback">
+                        <p class="part__cashback-name">Кэшбэк</p>
+                        <p class="part__cashback-value">+20 баллов</p>
+                    </div>
+                </div>
+                <button class="button button--red cart__button">Оплатить заказ</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Template Sections -->
+
+    <div id="map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A804226f720dfae803741f80fbf441bb03ea11dc65b9559c65af02e401a903aad&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        <a href="" rel="modal:close" class="login__form-close close--modal">
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+    <div class="menu">
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#catalog"></use>
+            </svg>
+            Каталог
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#actions"></use>
+            </svg>
+            Акции
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#user"></use>
+            </svg>
+            Профиль
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#compare"></use>
+            </svg>
+            Сравнение
+        </a>
+        <a class="menu__item">
+            <svg>
+                <use xlink:href="sprite.svg#cart"></use>
+            </svg>
+            Корзина
+        </a>
+    </div>
+    <div class="up up__cart"></div>
+    <div id="overlay"></div>
+    <div id="click">
+        <div class="click">
+            <p class="sub--title">Оформить быстрый заказ</p>
+            <div class="click__product">
+                <img src="img/click.png" alt="" class="click__product-image">
+                <div class="click__product-info">
+                    <p class="click__product-info--title">Нежный легкий крем для рук и тела с фруктовыми экстрактами</p>
+                    <div class="chars__desc">
+                        <div class="chars__desc-item">
+                            <p class="chars__desc-item--name">Бренд</p>
+                            <p class="chars__desc-item--value">Nivea</p>
+                        </div>
+                        <div class="chars__desc-item">
+                            <p class="chars__desc-item--name">Назначение</p>
+                            <p class="chars__desc-item--value">Увлажнение</p>
+                        </div>
+                        <div class="chars__desc-item">
+                            <p class="chars__desc-item--name">Возраст</p>
+                            <p class="chars__desc-item--value">после 25</p>
+                        </div>
+                        <div class="chars__desc-item">
+                            <p class="chars__desc-item--name">Против</p>
+                            <p class="chars__desc-item--value">Акне, жирный блеск</p>
+                        </div>
+                    </div>
+                    <div class="click__product-info--price">
+                        <div class="product__col">
+                            <button class="product__col-button minus cols">
+                                <svg>
+                                    <use xlink:href="sprite.svg#minus"></use>
+                                </svg>
+                            </button>
+                            <input type="text" class="product__col-input" readonly maxlength="3" value="1">
+                            <button class="product__col-button plus">
+                                <svg>
+                                    <use xlink:href="sprite.svg#plus"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="part__price-new">3 500 ₽</p>
+                    </div>
+                </div>
+            </div>
+            <form action="" class="click__form">
+                <div class="click__form-top">
+                    <input type="text" class="click__form-input" placeholder="Имя">
+                    <input type="tel" class="click__form-input" placeholder="Телефон">
+                </div>
+                <input type="text" class="click__form-input" placeholder="Комментарий">
+                <button class="button button--red click__form-button">Оформить</button>
+            </form>
+            <a href="" rel="modal:close" class="login__form-close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </div>
+
+    <!----------------------->
+</main>
+<footer class="footer footer__cart">
+    <div class="container">
+        <p class="footer__copyright">Copyright PRO Уход 2022</p>
+        <div class="footer__menu">
+            <a href="" class="footer__menu-item">Доставка и оплата</a>
+            <a href="" class="footer__menu-item">Контакты</a>
+            <a href="" class="footer__menu-item">О нас</a>
+        </div>
+        <div class="footer__contacts">
+            <a href="tel: +7 980 465 125 78" class="footer__contacts-item">
+                <svg>
+                    <use xlink:href="sprite.svg#phone"></use>
+                </svg>
+                +7 980 465 125 78
+            </a>
+            <a class="footer__contacts-item">
+                <svg>
+                    <use xlink:href="sprite.svg#location"></use>
+                </svg>
+                Воронеж, Плехановская 9
+            </a>
+        </div>
+        <div class="footer__socials">
+            <a href="" class="footer__socials-item">
+                <svg>
+                    <use xlink:href="sprite.svg#telegram"></use>
+                </svg>
+            </a>
+            <a href="" class="footer__socials-item">
+                <svg>
+                    <use xlink:href="sprite.svg#whatsapp"></use>
+                </svg>
+            </a>
+            <a href="" class="footer__socials-item">
+                <svg>
+                    <use xlink:href="sprite.svg#vk"></use>
+                </svg>
+            </a>
+        </div>
+        <a target="_blank" href="https://intrid.ru/" class="footer__intrid">
+            <div class="footer__intrid-circle">
+                <span class="footer__intrid-circle--in"></span>
+            </div>
+            made in <span class="footer__intrid-fat">INTRID</span>
+        </a>
+    </div>
+</footer>
+<script
+        src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+        crossorigin="anonymous"
+>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.js"></script>
+<script src="js/header.js"></script>
+<script src="js/sliders.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/cartAddListener.js"></script>
+<script src="js/burger.js"></script>
+<script src="js/upArrow.js"></script>
+<script src="js/filterSearch.js"></script>
+<script src="js/rangeFilter.js"></script>
+<script src="js/catalogListeners.js"></script>
+<script src="js/bigCard.js"></script>
+<script src="js/phoneMask.js"></script>
+<script src="js/orderHandlers.js"></script>
 </body>
 </html>

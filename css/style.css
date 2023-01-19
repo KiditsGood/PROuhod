@@ -2222,10 +2222,240 @@ a.crumbs__item:after{
 .cart__policy a{
     color: var(--primary100);
 }
-.cart .part__price-new{
+.cart .part__price-new, .order .part__price-new{
     text-align: center;
 }
 
+/* Order */
+
+.order{
+    max-width: 1440px;
+    margin: 32px auto 48px;
+    display: flex;
+    align-items: stretch;
+    gap: 32px;
+}
+.order--left{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 1063px;
+}
+.order__item{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border: 1px solid #EAEAEE;
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 24px;
+}
+.order__item-top{
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+.order__item-top_regex{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    color: var(--primary100);
+    padding: 9px 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.order__item-inputs{
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+}
+.order__input{
+    width: 100%;
+    position: relative;
+}
+.order__input-field{
+    background: var(--neutral5);
+    border-radius: 16px;
+    border: 2px solid var(--neutral5);
+    box-sizing: border-box;
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    width: 100%;
+    transition: 0.2s;
+}
+.order__input-field:focus{
+    background: white;
+    border-color: var(--primary100);
+}
+.order__input-field:valid:not(:focus){
+    background: white;
+    border-color: var(--neutral15);
+}
+.order__input-field:valid:not(:focus) + .order__input-label{
+    color: var(--neutral80);
+}
+.order__input-field[type='email']:invalid:not(:focus){
+    background: white;
+    border-color: #B95000;
+}
+.order__input-field[type='email']:invalid:not(:focus) + .order__input-label{
+    color: #B95000;
+    font-size: 13px;
+    line-height: 20px;
+    background: white;
+    top: -10px;
+}
+.order__input-field:focus + .order__input-label, .order__input-field:valid + .order__input-label{
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--primary100);
+    background: white;
+    top: -10px;
+}
+.order__input-label{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--neutral100);
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    cursor: text;
+    pointer-events: none;
+    transition: 0.2s;
+    padding: 0 4px;
+}
+.order__item-bottom{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.order__item-bottom .tabs{
+    margin: 0;
+    gap: 32px;
+}
+.self{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.delivery{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.self__text{
+    font-size: 16px;
+    line-height: 21px;
+}
+.comment{
+    position: relative;
+}
+.comment__area{
+    font-size: 16px;
+    line-height: 24px;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    resize: none;
+    height: 72px;
+    border-radius: 16px;
+    background: #EFEFF3;
+    width: 100%;
+    font-weight: 600;
+}
+.comment__area::placeholder{
+    color: var(--neutral100);
+}
+.points{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.points__name{
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--neutral60);
+}
+.points__value{
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 16px;
+    color: #3DC46B;
+    background: #F4FDF7;
+    border-radius: 36px;
+    padding: 8px;
+}
+.order__item-top.point{
+    justify-content: space-between;
+}
+.pay{
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+.pay__methods{
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+}
+.pay__methods-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--neutral60);
+    background: #F6F6F9;
+    border-radius: 56px;
+    border: 2px solid #F6F6F9;
+    padding: 14px 22px;
+}
+.pay__methods-item:hover{
+    border-color: var(--primary100);
+    background: white;
+    color: var(--primary100);
+    font-weight: 600;
+}
+.pay__methods-item:hover svg{
+    fill: var(--primary100);
+}
+.pay__methods-item.active{
+    border-color: var(--primary100);
+    background: white;
+    color: var(--primary100);
+    font-weight: 600;
+}
+.pay__methods-item.active svg{
+    fill: var(--primary100);
+}
+.pay__methods-item svg{
+    width: 24px;
+    height: 24px;
+    transition: 0.2s;
+    fill: var(--neutral40);
+}
+.pay__point{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.point--input{
+    max-width: 198px;
+}
+.point--input input:disabled{
+    opacity: 0.5;
+}
+.point--input input:disabled + label{
+    opacity: 0.5;
+}
+.order .part, .order .cart__right{
+    max-width: 346px;
+    width: 100%;
+}
 
 /* Media Queries */
 
@@ -2339,6 +2569,16 @@ a.crumbs__item:after{
         min-width: 172px;
         flex-direction: column;
         gap: 10px;
+    }
+    .order .tabs__buttons{
+        flex-wrap: wrap;
+    }
+    .pay{
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+    .order__item-inputs{
+        flex-wrap: wrap;
     }
 }
 
@@ -3028,5 +3268,49 @@ a.crumbs__item:after{
     }
     .login__form-cancel, .login__form-link{
         width: 100%;
+    }
+    .order__item-top{
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .order__item{
+        border: none;
+        padding: 0;
+    }
+    .order__item-inputs{
+        flex-wrap: wrap;
+    }
+    .order .tabs__buttons{
+        flex-wrap: wrap;
+    }
+    .order .tabs__buttons-item{
+        width: 100%;
+    }
+    .order__item-bottom{
+        flex-wrap: wrap;
+    }
+    .pay{
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+    }
+    .pay__methods{
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+    .pay__methods-item{
+        width: 100%;
+    }
+    .pay__point{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .point--input{
+        max-width: unset;
+    }
+    .order .part, .order .cart__right{
+        max-width: unset;
     }
 }
